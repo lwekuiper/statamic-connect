@@ -1,0 +1,14 @@
+enabled: true
+email_field: email
+consent_field: gdpr_consent
+list_ids:
+  - '1'
+tag_ids:
+  - '10'
+merge_fields:
+  -
+    form_field: name
+    remote_field: firstName
+  -
+    form_field: phone
+    remote_field: phone
