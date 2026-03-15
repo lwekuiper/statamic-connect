@@ -1,9 +1,9 @@
 # statamic-connect
 
 ## Project Overview
-A Statamic addon bundling marketing & CRM integrations (ActiveCampaign,
-HubSpot, Klaviyo, Brevo, Salesforce). Each integration is a self-contained
-module, toggled on/off in the Statamic CP.
+A Statamic addon bundling marketing & CRM integrations (Mailchimp,
+ActiveCampaign, HubSpot, Klaviyo, Brevo, Salesforce). Each integration is a
+self-contained module, toggled on/off in the Statamic CP.
 
 ## Architecture
 - Each integration lives in src/Integrations/{Name}/
@@ -11,6 +11,30 @@ module, toggled on/off in the Statamic CP.
 - Multi-site config is a Pro-only feature, gated via Statamic editions
 - CP Vue components live in resources/js/components/{Name}/
 - Config published to config/statamic/connect.php
+
+## Integration Priorities
+- Phase 1 (Launch): Mailchimp, ActiveCampaign, HubSpot, Klaviyo, Brevo, Salesforce
+- Phase 2: ConvertKit (Kit), MailerLite
+- Phase 3: Campaign Monitor, Mailcoach, Drip, Constant Contact, Bento
+
+## Competitive Landscape
+Multi-site support is the primary differentiator for this addon.
+
+| Platform | Existing Addon | Multi-site? |
+|---|---|---|
+| Mailchimp | statamic-rad-pack/mailchimp | No |
+| ActiveCampaign | lwekuiper/activecampaign | Yes (Pro) |
+| HubSpot | lwekuiper/hubspot | Yes (Pro) |
+| Brevo | siterig/sendinblue | No |
+| Salesforce | stokoe/forms-to-wherever | No |
+| MailerLite | siterig/mailerlite | No |
+| Campaign Monitor | rad-pack/campaign-monitor | No |
+| Mailcoach | spatie/mailcoach | No |
+| ConvertKit | stokoe/forms-to-wherever | No |
+| Klaviyo | — | No addon |
+| Drip | — | No addon |
+| Constant Contact | — | No addon |
+| Bento | bentonow/statamic | No |
 
 ## Key Commands
 - composer test — run PHPUnit
