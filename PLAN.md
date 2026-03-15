@@ -645,6 +645,28 @@ statamic-connect/
 
 ---
 
+## Scaling to 20+ Integrations
+
+The current architecture (explicit registration in ServiceProvider, single config file,
+eager Vue component loading) is appropriate for 5 integrations. If the addon grows to 20+,
+the following refactors would be needed:
+
+- **Auto-discovery:** Replace manual registration with directory scanning. Each
+  `src/Integrations/{Name}/` would contain a manifest or mini service provider that the
+  main ServiceProvider discovers and boots automatically for enabled integrations.
+- **Per-integration config files:** Split `config/connect.php` into
+  `config/connect/activecampaign.php`, `config/connect/hubspot.php`, etc.
+- **Lazy-loaded Vue components:** Use dynamic imports so fieldtype components are only
+  loaded when their integration is active, reducing bundle size.
+- **Grouped CP navigation:** Categorize integrations (e.g., "Email Marketing", "CRM",
+  "E-commerce") instead of a flat list under Connect.
+
+The BaseIntegration contract (`subscribe()`, `mapFields()`, `validateConfig()`) stays
+the same — only the registration mechanism changes. This refactor is straightforward to
+do later without breaking integration implementations.
+
+---
+
 ## Implementation Order
 
 1. Phase 1 — Project scaffold (composer.json, package.json, config, phpunit)

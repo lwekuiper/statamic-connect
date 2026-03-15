@@ -1,0 +1,44 @@
+{
+    "name": "lwekuiper/statamic-connect",
+    "description": "Marketing & CRM integrations for Statamic",
+    "type": "statamic-addon",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Laurens Kuiper",
+            "email": "l@urens.me"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "statamic/cms": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lwekuiper\\StatamicConnect\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lwekuiper\\StatamicConnect\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lwekuiper\\StatamicConnect\\ServiceProvider"
+            ]
+        },
+        "statamic": {
+            "name": "Connect",
+            "description": "Marketing & CRM integrations for Statamic",
+            "editions": [
+                "lite",
+                "pro"
+            ]
+        }
+    }
+}

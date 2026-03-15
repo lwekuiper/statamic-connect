@@ -1,0 +1,12 @@
+email_field: email
+consent_field: gdpr_consent
+list_ids:
+  - 1
+  - 2
+tag_ids:
+  - 10
+merge_fields:
+  - statamic_field: first_name
+    activecampaign_field: firstName
+  - statamic_field: last_name
+    activecampaign_field: lastName

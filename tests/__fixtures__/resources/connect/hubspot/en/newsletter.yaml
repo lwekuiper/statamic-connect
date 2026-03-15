@@ -1,0 +1,9 @@
+email_field: email
+consent_field: consent
+contact_properties:
+  - statamic_field: first_name
+    hubspot_field: firstname
+  - statamic_field: last_name
+    hubspot_field: lastname
+  - statamic_field: company
+    hubspot_field: company
